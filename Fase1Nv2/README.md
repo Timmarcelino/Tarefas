@@ -3,7 +3,7 @@
 Tipos:
     String
         Missing Character, básico (missingCharacter.rb)        
-        Count, fácil
+        Count, fácil (count.rb)
     Array
         Find Three, fácil
         Reversal, fácil
