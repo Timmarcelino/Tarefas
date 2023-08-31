@@ -23,4 +23,4 @@ end
 
 input = [10, 4, 3, 50, 23, 90]
 resultado = print3largest(input)
-puts "\n Os três maiores elementos são: #{resultado[:First]}, #{resultado[:Second]} e #{resultado[:Third]}"
+puts "\n Os três maiores elementos são: #{resultado[:First]}, #{resultado[:Second]} e #{resultado[:Third]}\n"
