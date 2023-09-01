@@ -7,49 +7,33 @@ def nextClosestDate(arr, query)
   arr.each{|data|
     newArr << Date.strptime(data, formatDate)
   }
+  newArr.sort
   newQuery = []
   query.each{|data|
     newQuery << Date.strptime(data, formatDate)
   }
-  newArr.sort
-  newArr.reverse
-
   resposta = []
 
-  newQuery.each{|data|
-    newArr.each{|dataf|
-    if dataf > data do
-        futuro = dataf
-    else
-        futuro = -1
+  for data in newQuery
+    futuro = -1
+    for dataf in newArr
+       if dataf > data
+         futuro = dataf
+         break
+       end
     end
-    }
     resposta << futuro
-  }
+  end
 
-  resposta.collect{|i| puts i.strftime(formatDate)}
+  puts resposta
+  #resposta.each { |i| puts i.strftime(formatDate) }
 end
-
-
-
-
-
 
 #entradas:
 arr = ['22/4/1233', '1/3/633', '23/5/56645', '4/12/233']
 puts arr.inspect
-query = ["23/3/4345", "12/3/2"]
+#query = ["23/3/4345", "12/3/2"]
+query = ["4/4/34234234"]
 puts query.inspect
-
 nextClosestDate(arr, query)
 
-formatDate = "%d/%m/%Y"
-
-data1 = "31/08/2024"
-data2 = "30/08/2023"
-
-day1 = Date.strptime(data1, formatDate)
-puts day1
-day2 = Date.strptime(data2, formatDate)
-
-puts (day1 - day2).class
