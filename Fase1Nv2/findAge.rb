@@ -14,6 +14,8 @@ def findAge(dataNasc, data)
     dias = (dataInformada - Date.new((dataInformada -31).year, (dataInformada-31).mon, nasc.mday)).to_i
     if nasc.mon > dataInformada.mon
       meses = (12 - nasc.mon) + dataInformada.mon
+    elsif nasc.mon == dataInformada.mon
+      meses = 11
     else
       meses = dataInformada.mon - nasc.mon
     end
@@ -35,10 +37,10 @@ end
 #Entrada de dados
 
 diaN = '23'
-mesN = '01'
+mesN = '09'
 anoN = '1981'
 
-diaI = '02'
+diaI = '03'
 mesI = '09'
 anoI = '2023'
 
