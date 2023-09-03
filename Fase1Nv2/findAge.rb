@@ -4,7 +4,7 @@ def findAge(dataNasc, data)
   formatDate = "%d/%m/%Y"
   nasc = Date.strptime(dataNasc, formatDate)
   dataInformada = Date.strptime(data, formatDate)
-  #hoje = Date.today
+  #hoje = Date.strptime(Date.today, "%d/%m/%Y")
 
 
   anos = (dataInformada - nasc).to_i / 365
@@ -45,6 +45,8 @@ mesI = '09'
 anoI = '2023'
 
 dataNascimento = diaN.to_i.to_s + '/' + mesN.to_i.to_s + '/' + anoN.to_i.to_s
-dataInserida = diaI.to_i.to_s + '/' + mesI.to_i.to_s + '/' + anoI.to_i.to_s
+#dataInserida = diaI.to_i.to_s + '/' + mesI.to_i.to_s + '/' + anoI.to_i.to_s
+
+dataInserida =  Date.today.strftime("%d/%m/%Y")
 
 findAge(dataNascimento, dataInserida)
