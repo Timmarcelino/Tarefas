@@ -3,7 +3,7 @@ def binarySearch(array, valor)  #Necessario o vetor estar ordenado
   l = 0
 
   while l <= r
-    mid = (r/2).to_i
+    mid = ((l + (r -1))/2).to_i
     if array[mid] == valor
       return mid
     elsif array[mid] < valor
@@ -13,3 +13,11 @@ def binarySearch(array, valor)  #Necessario o vetor estar ordenado
     end
   end
 end
+
+
+#Implementação e testes:
+
+arr = [2, 5, 8, 12, 16, 23, 38, 56, 72, 91]
+valor = 23
+
+puts " \n\n O elemento procurado está na posição: #{binarySearch(arr, valor)}\n\n"
