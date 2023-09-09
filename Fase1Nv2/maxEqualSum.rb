@@ -21,19 +21,25 @@ def maxEqualSum(stack1, stack2, stack3)
   if sum1 == sum2 && sum2 == sum3 && sum3 == 0
     return 0
   end
-  while(sum1 != sum2 && sum2 != sum3) do
-    puts "S1: #{sum1}, S2: #{sum2}, S3: #{sum3}"
+
+  loop = true
+
+  while(loop) do
     if sum1 == sum2 && sum2 == sum3
+      loop = false
       return sum1
     elsif sum1 > sum2 && sum1 > sum3
       stack1.delete_at(0)
       sum1 = stack1.sum
+      puts "Stack1 : #{stack1.inspect}"
     elsif sum2 > sum1 && sum2 > sum3
       stack2.delete_at(0)
       sum2 = stack2.sum
+      puts "Stack2 : #{stack2.inspect}"
     elsif sum3 > sum1 && sum3 > sum2
       stack3.delete_at(0)
       sum3 = stack3.sum
+      puts "Stack3 : #{stack3.inspect}"
     end
 
     if stack1.length == 1
@@ -43,6 +49,7 @@ def maxEqualSum(stack1, stack2, stack3)
     elsif stack3.length == 1
       return sum3
     end
+    puts "S1: #{sum1}, S2: #{sum2}, S3: #{sum3}"
   end
 end
 
