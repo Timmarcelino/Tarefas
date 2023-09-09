@@ -6,5 +6,16 @@
 =end
 
 def maxEqualSum(stack1, stack2, stack3)
+  n1 = stack1.length
+  n2 = stack2.length
+  n3 = stack3.length
+
+  sum1 = stack1.sum
+  sum2 = stack2.sum
+  sum3 = stack3.sum
+
+
+
+
 
 end
